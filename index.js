@@ -56,7 +56,8 @@ async function fetchAndStoreStories() {
 
             await pool.query(
                 `INSERT INTO sentiment_scores (story_id, sentiment_score, sentiment_label)
-                 VALUES ($1, $2, $3)`,
+                 VALUES ($1, $2, $3)
+                 ON CONFLICT (story_id) DO NOTHING`,
                 [story.id, analysis.score, label]
             );
 
