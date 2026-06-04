@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+import './App.css';
 
 function App() {
   const [stories, setStories] = useState([]);
@@ -18,7 +19,7 @@ function App() {
 
   return (
     <div style={{ padding: "2rem" }}>
-      <h1>HN Sentiment Tracker</h1>
+      <h1 className = "header">HN Sentiment Tracker</h1>
 
       <h2>Sentiment Breakdown</h2>
       <ResponsiveContainer width="100%" height={300}>
