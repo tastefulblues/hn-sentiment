@@ -9,7 +9,9 @@ const app = express();
 const sentiment = new Sentiment();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(cors({
+    origin: ['http://localhost:3000', 'https://hn-sentiment.vercel.app/']
+}));
 app.use(express.json());
 
 app.get('/api/test', (req, res) => {
