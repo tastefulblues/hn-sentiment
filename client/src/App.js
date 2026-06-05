@@ -18,23 +18,27 @@ function App() {
   ];
 
   return (
-    <div style={{ padding: "2rem" }}>
+    <div className = "container">
       <h1 className = "header">HN Sentiment Tracker</h1>
+      <p className ="subheader">Tracking sentiment across Hacker News</p>
 
-      <h2>Sentiment Breakdown</h2>
+      <h2 className = "section-title">Sentiment Breakdown</h2>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={chartData}>
-          <XAxis dataKey="label" />
-          <YAxis />
-          <Tooltip />
-          <Bar dataKey="count" fill="#f97316" />
+          <XAxis dataKey="label" stroke = "#888"/>
+          <YAxis stroke = "#888"/>
+          <Tooltip contentStyle={{backgroundColor: "#1a1a1a", border: "1px solid #2a2a2a"}} />
+          <Bar dataKey="count" fill="#f97316" radius = {[4,4,0,0]} />
         </BarChart>
       </ResponsiveContainer>
 
-      <h2>Stories</h2>
+      <h2 className = "section-title">Stories</h2>
       {stories.map((story) => (
-        <div key={story.id}>
-          <p>{story.title} — {story.sentimentLabel}</p>
+        <div key={story.id} className = "story-card">
+          <p className = "story-title">{story.title}</p>
+          <span classname = {`sentiment-label ${story.sentimentlabel}`}>
+            {story.sentimentLabel}
+          </span>
         </div>
       ))}
     </div>
