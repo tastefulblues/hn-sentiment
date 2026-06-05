@@ -6,7 +6,7 @@ function App() {
   const [stories, setStories] = useState([]);
 
   useEffect(() => {
-    fetch("https://your-railway-url.up.railway.app/api/stories")
+    fetch(`${process.env.REACT_APP_API_URL}/api/stories`)
       .then((res) => res.json())
       .then((data) => setStories(data));
   }, []);
