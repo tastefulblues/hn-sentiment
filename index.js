@@ -10,7 +10,7 @@ const sentiment = new Sentiment();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://hn-sentiment.vercel.app/']
+    origin: ['http://localhost:3000', 'https://hn-sentiment.vercel.app']
 }));
 app.use(express.json());
 
