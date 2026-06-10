@@ -70,7 +70,7 @@ async function fetchAndStoreStories() {
     return stories;
 }   
 
-cron.schedule('* * * * *', () => {
+cron.schedule('0 * * * *', () => {
     console.log('Running scheduled fetch...');
     fetchAndStoreStories();
 });
