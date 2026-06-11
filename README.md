@@ -2,6 +2,8 @@
 
 A full-stack web app that tracks sentiment trends across Hacker News top stories over time.
 
+https://hn-sentiment.vercel.app/
+
 ## What it does
 - Fetches the top 10 Hacker News stories every minute via the HN API
 - Runs sentiment analysis on each story title (Simply with a dictionary)
@@ -12,6 +14,7 @@ A full-stack web app that tracks sentiment trends across Hacker News top stories
 - **Backend:** Node.js, Express
 - **Database:** PostgreSQL
 - **Frontend:** React, Recharts
+- **Deployment** Railway, Vercel
 - **Other:** node-cron for scheduled fetching, sentiment for NLP analysis
 
 ## Running locally
@@ -48,4 +51,4 @@ A full-stack web app that tracks sentiment trends across Hacker News top stories
 ## Future improvements
 - Upgrade sentiment analysis using an LLM API
 - Add topic filtering and keyword tracking
-- Deploy to a live URL
+- Track sentiment changes over time
